@@ -47,10 +47,23 @@ Looking at the bar graph above, we can see that there are more males dying over 
 ## Numerical results
 
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Now taking a look at the data presented above, We see the total of 36% of females dead leaving 64% of males dying. When looking at the percentages on being alive, Females are at 56% while males are left at 44%.
+
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-
+The data here now gives us the total amount of people alive and dead due to the disease.The observed count collected the data and shows that 1832 females and 1411 males are alive leaving 25 females and 44 males dead.When comparing the observed count to the expected null, We can see a difference where the expected null shows more females dying compared to men meaning the disease targets more men over females. The odds ratio for men dying would be 2.3.
 
 ## Conclusions
 
